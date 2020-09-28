@@ -11,3 +11,5 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 
 ### Imagen salida código entrega 1
 ![image](https://user-images.githubusercontent.com/43451947/94461311-594bf280-0190-11eb-9569-fce93473ee26.png)
+
+*Dato:* nosotros utilizamos el mismo tipo de indentacion todo el tiempo, el profesor afirmo en clases que windows y linux eran distintos en cuendo a este tema pero que su computador o programa era "inteligente" y transformaba unos en otros, por lo que no habría problemas.
