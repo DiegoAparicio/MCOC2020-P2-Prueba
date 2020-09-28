@@ -72,6 +72,14 @@ class Reticulado(object):
         return
 
     def __str__(self):
-        """Implementar"""
-        return 
+        s = "nodos:\n"
+        for i in range(len(self.xyz)):
+            nodo_i=self.obtener_coordenada_nodal(i)
+            s+=f'  {i} : ( {nodo_i[0]}, {nodo_i[1]}, {nodo_i[2]})\n'
+        s += "\nbarras:\n"
+        for j in range(len(self.barras)):
+            s+=f'  {j} : [ {self.barras[j].ni} {self.barras[j].nj} ]\n'
+        
+        s+=f"\npeso_total = {Reticulado.calcular_peso_total(self)}"
+        return s 
 
