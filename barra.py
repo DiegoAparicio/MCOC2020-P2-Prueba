@@ -52,3 +52,13 @@ class Barra(object):
         return peso
 
 
+
+
+
+
+
+
+
+
+
+
