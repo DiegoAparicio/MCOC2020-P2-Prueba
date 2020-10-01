@@ -121,21 +121,33 @@ class Reticulado(object):
         # 0 : Aplicar restricciones
         Ngdl = self.Nnodos * self.Ndimensiones
         gdl_libres = np.arange(Ngdl)
+        llaves=[i for i in self.restricciones]
         gdl_restringidos = []
-
+        # aqui se crea una lista que contiene todas las restricciones conocidas
+        for j in llaves:            
+            if self.restricciones[j][0][0]==0:
+                gdl_restringidos.append(j*2)
+            if self.restricciones[j][0][0]==1:
+                gdl_restringidos.append((j*2)+1)
+            if len (self.restricciones[j])>1:
+                if self.restricciones[j][1][0]==0:
+                    gdl_restringidos.append(j*2)
+                if self.restricciones[j][1][0]==1:
+                    gdl_restringidos.append((j*2)+1)
+            # Si hay 3 dimensiones  
+            if len (self.restricciones[j])>2:
+                if self.restricciones[j][2][0]==0:
+                    gdl_restringidos.append(j*2)
+                if self.restricciones[j][2][0]==1:
+                    gdl_restringidos.append((j*2)+1)
+      
         #Identificar gdl_restringidos y llenar u 
         # en valores conocidos.
         #
         # Hint: la funcion numpy.setdiff1d es util
-
-
-        #Agregar cargas nodales a vector de cargas 
-        for nodo in self.cargas:
-            for carga in self.cargas[nodo]:
-                gdl = carga[0]
-                valor = carga[1]
-                gdl_global = 2*nodo + gdl
-                
+        gdl_libres=np.setdiff1d(gdl_libres,gdl_restringidos)
+        #self.ensamblar_sistema()[0][[]]
+   
 
 
         #1 Particionar:
@@ -143,14 +155,45 @@ class Reticulado(object):
         #       f en ff y fc
         #       u en uf y uc
         
+        # Se obtiene el Kff
+                
+        K_desordenado=self.ensamblar_sistema()[0]
+        Kff_col=[]
+        
+        for col in gdl_libres:
+            Kff_col.append(list(K_desordenado[:,col]))
+        Kff_col=np.matrix(Kff_col).T.tolist()
+
+        Kff=[]
+        for fil in gdl_libres:
+            Kff.append(Kff_col[fil])
+
+        Kff=np.matrix(Kff)
+
+        # Se obtiene ff
+        
+        ff=[]
+        fuerzas=self.ensamblar_sistema()[1]
+        for f in gdl_libres:
+        
+            ff.append(fuerzas[f])
+        
 
         # Resolver para obtener uf -->  Kff uf = ff - Kfc*uc
         
+        uf=inv(Kff) @ ff
+
         #Asignar uf al vector solucion
-        self.u[gdl_libres] = uf
+        lista_u=list(self.u)
+        contador=0
+        for i in gdl_libres: #9
+                lista_u[i]=uf[contador]
+                contador+=1
+        self.u=np.array(lista_u)
 
         #Marcar internamente que se tiene solucion
         self.tiene_solucion = True
+        return self.u
 
     def obtener_desplazamiento_nodal(self, n):
         """Entrega desplazamientos en el nodo n como un vector numpy de (2x1) o (3x1)
