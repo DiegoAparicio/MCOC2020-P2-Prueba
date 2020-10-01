@@ -20,6 +20,7 @@ ret.agregar_nodo(0,0)
 ret.agregar_nodo(1,0)
 ret.agregar_nodo(1,1)
 
+print(ret)
 
 #Barras
 b1 = Barra(0, 1, 20*cm, 4*mm, 200*GPa, 7600*kg/m**3, 420*MPa)
@@ -30,6 +31,8 @@ ret.agregar_barra(b1)
 ret.agregar_barra(b2)
 ret.agregar_barra(b3)
 
-print(ret)
+peso_total = ret.calcular_peso_total()
+
+print(f"peso_total = {peso_total}")
 
 ver_reticulado_2d(ret)
