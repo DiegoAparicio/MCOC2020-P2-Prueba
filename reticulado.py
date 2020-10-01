@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.linalg import solve
+from scipy.linalg import solve,inv
 
 class Reticulado(object):
     """Define un reticulado"""
@@ -55,17 +55,25 @@ class Reticulado(object):
         """Agrega una restriccion, dado el nodo, grado de libertad y valor 
         del desplazamiento de dicho grado de libertad
         """
+        if nodo not in self.restricciones:
+            self.restricciones[nodo]=[[gdl,valor]]
+        else:
+            self.restricciones[nodo].append([gdl,valor])
 
         #Implementar
 
 
 
     def agregar_fuerza(self, nodo, gdl, valor):
-        """Agrega una restriccion, dado el nodo, grado de libertad y valor 
+        """Agrega una fuerza, dado el nodo, grado de libertad y valor 
         del la fuerza en la direccion de dicho GDL
         """
-
+        if nodo not in self.cargas:
+            self.cargas[nodo]=[[gdl,valor]]
+        else:
+            self.cargas[nodo].append([gdl,valor])
         #Implementar
+        
 
 
     def ensamblar_sistema(self):
@@ -76,10 +84,32 @@ class Reticulado(object):
         self.K = np.zeros((Ngdl,Ngdl), dtype=np.double)
         self.f = np.zeros((Ngdl), dtype=np.double)
         self.u = np.zeros((Ngdl), dtype=np.double)
-
+        
         #Implementar
-
-
+        for barra in self.barras:
+            nodo1=barra.ni
+            nodo2=barra.nj
+            d=[2*nodo1, ((2*nodo1)+1), 2*nodo2, ((2*nodo2)+1)]
+            
+            for i in range (len(d)):
+                p=d[i]
+                for j in range(len(d)):
+                    q=d[j]
+                    ke=barra.obtener_rigidez(self)
+                    self.K[p,q]+=ke[i,j]
+                #p puede tomar los valores de 2*n1, 2*n1+1,....+=
+                    fe=barra.obtener_vector_de_cargas(self)
+                    
+                self.f[p]+=fe[i]
+        
+        for carga in self.cargas:
+            # nodo 4
+            x_o_y=self.cargas[carga][0][0] # x=0, y=1
+            fuerza=self.cargas[carga][0][1]
+            nodo_a_considerar=carga*2+x_o_y
+            self.f[nodo_a_considerar]+=fuerza
+        
+        return self.K,self.f
 
 
 
