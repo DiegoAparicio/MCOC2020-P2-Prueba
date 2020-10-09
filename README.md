@@ -46,7 +46,13 @@ Peso total de la estructura: `24.197,44 [N]`
 ### Informe
 
 #### 1)
-Las barras a rediseñar serán: 9 nodos(1,7), 10 nodos(10,8), 13 nodos(1,9), 15 nodos(3,9), 16 nodos(2,10).
+Las barras a rediseñar serán: 
+* Barra 9: nodos(1,7)
+* Barra 10: nodos(10,8)
+* Barra 13: nodos(1,9)
+* Barra 15: nodos(3,9)
+* Barra 16: nodos(2,10)
+
 En primer lugar se debe calcular el largo inicial de las barras. En este caso todas las barras poseerán el mismo largo debido a la simetria del problema en los rectangulos de la base (largo = 5m, ancho = 2m). Por lo que para encontrar el largo inicial de las barras solo hace falta aplicar el Teorema de Pitagoras. Con esto llegamos a que `L = 5,38516 [m]`.
 Una vez calculado el largo, se procede a calcular el area inicial. Para esto hay que considerar que la barra es hueca y posee un radio `R = 8 [cm]`y un espesor `t = [5 mm]`. Para calcular el area se utiliza la siguiente formula:
 
