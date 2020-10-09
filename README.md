@@ -26,14 +26,20 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 ## Entrega 4
 
 Programa entrega los siguientes graficos:
-
+### Reticulado
 ![RETICULADO](https://user-images.githubusercontent.com/43649125/95604093-8ec4cb80-0a2d-11eb-8667-510610c5a3d7.png)
 
+### Tensiones Caso 1
 ![TENSIONES 1 (D)](https://user-images.githubusercontent.com/43649125/95604110-97b59d00-0a2d-11eb-9d3d-9d5b8108790a.png)
 
+### Tensiones Caso 2
 ![TENSIONES 2 (D+L)](https://user-images.githubusercontent.com/43649125/95604116-9ab08d80-0a2d-11eb-8e87-e63bd50f82b6.png)
 
+### Factor de Utilización Caso 1
 ![FU 1 (D)](https://user-images.githubusercontent.com/43649125/95604137-a0a66e80-0a2d-11eb-9f9f-c6af956e1c42.png)
 
+### Factor de Utilización Caso 2
 ![FU (D+L)](https://user-images.githubusercontent.com/43649125/95604141-a3a15f00-0a2d-11eb-9310-0a49fe8b967e.png)
 
+
+### Informe
