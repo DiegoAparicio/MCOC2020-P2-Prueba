@@ -67,7 +67,7 @@ La densidad tiene un valor de:
 
 ![CodeCogsEqn (9)](https://user-images.githubusercontent.com/43649125/95626377-87fb8000-0a50-11eb-8283-8991f247ad7a.gif)
 
-Desarrollando se llega a que el peso es `P = 977,534 [N]`
+Desarrollando se llega a que el peso es `P = 977,534 [N]`.
 Para obtener el Factor de Utilizacion de las barras utilizamos la función:
 
 ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/43649125/95621487-27684500-0a48-11eb-9198-7ac82172ab63.gif)
