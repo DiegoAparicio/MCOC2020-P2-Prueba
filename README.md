@@ -48,14 +48,22 @@ Programa entrega los siguientes graficos:
 Las barras a rediseñar serán: 9 nodos(1,7), 10 nodos(10,8), 13 nodos(1,9), 15 nodos(3,9), 16 nodos(2,10).
 En primer lugar se debe calcular el largo inicial de las barras. En este caso todas las barras poseerán el mismo largo debido a la simetria del problema en los rectangulos de la base (largo = 5m, ancho = 2m). Por lo que para encontrar el largo inicial de las barras solo hace falta aplicar el Teorema de Pitagoras. Con esto llegamos a que `L = 5,38516 [m]`.
 Una vez calculado el largo se procede a claular el area inicial. Para esto hay que considerar que la barra es hueca y posee un radio `R = 8 [cm]`y un espesor `t = [5 mm]`. Para calcular el area se utiliza la siguiente formula:
+
 ![CodeCogsEqn](https://user-images.githubusercontent.com/43649125/95619189-96dc3580-0a44-11eb-872c-92a031fb27a0.gif)
 Con esto llegamos a que el area de las barras es `A = 0.00243473 [m2]`.
 El paso siguiente es calcular el peso de cada barra, para esto se debe multiplicar el volumen por la densidad, lo cual se puede reescribir de la siguiente forma:
+
 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/43649125/95620406-82993800-0a46-11eb-8e65-4037413d6d95.gif)
 Desarrollando se llega a que el peso es `P = 977,534 [N]`
 Para obtener el Factor de Utilizacion de las barras utilizamos la función:
-![CodeCogsEqn (2)](https://user-images.githubusercontent.com/43649125/95621487-27684500-0a48-11eb-9198-7ac82172ab63.gif)
 
+![CodeCogsEqn (2)](https://user-images.githubusercontent.com/43649125/95621487-27684500-0a48-11eb-9198-7ac82172ab63.gif)
+Donde `\sigma_{y} = 420000000 [N/m2]` y `\phi = 0,9` Desarrollando llegamos a que los Factores de Utilizacion de las barras son:
+* FU Barra 9 = 0,011455
+* FU Barra 10 = 0,011455
+* FU Barra 13 = 0,022808
+* FU Barra 15 = 0,011455
+* FU Barra 16 = 0,011455
 #### 2
 #### 3
 
