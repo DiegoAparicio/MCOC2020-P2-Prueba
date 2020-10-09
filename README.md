@@ -22,3 +22,6 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 ### Imagen salida código entrega 2
 ![image](https://user-images.githubusercontent.com/43451947/94840200-71b94880-03ee-11eb-8483-0e243c3b53c0.png)
 ![image](https://user-images.githubusercontent.com/43451947/94840233-7d0c7400-03ee-11eb-9e66-1c545049ea23.png)
+
+## Entrega 4
+
