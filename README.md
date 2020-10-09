@@ -41,29 +41,65 @@ Programa entrega los siguientes graficos:
 ### Factor de Utilización Caso 2
 ![FU (D+L)](https://user-images.githubusercontent.com/43649125/95604141-a3a15f00-0a2d-11eb-9310-0a49fe8b967e.png)
 
+Peso total de la estructura: `24.197,44 [N]`
 
 ### Informe
 
 #### 1
 Las barras a rediseñar serán: 9 nodos(1,7), 10 nodos(10,8), 13 nodos(1,9), 15 nodos(3,9), 16 nodos(2,10).
 En primer lugar se debe calcular el largo inicial de las barras. En este caso todas las barras poseerán el mismo largo debido a la simetria del problema en los rectangulos de la base (largo = 5m, ancho = 2m). Por lo que para encontrar el largo inicial de las barras solo hace falta aplicar el Teorema de Pitagoras. Con esto llegamos a que `L = 5,38516 [m]`.
-Una vez calculado el largo se procede a claular el area inicial. Para esto hay que considerar que la barra es hueca y posee un radio `R = 8 [cm]`y un espesor `t = [5 mm]`. Para calcular el area se utiliza la siguiente formula:
+Una vez calculado el largo, se procede a calcular el area inicial. Para esto hay que considerar que la barra es hueca y posee un radio `R = 8 [cm]`y un espesor `t = [5 mm]`. Para calcular el area se utiliza la siguiente formula:
 
 ![CodeCogsEqn](https://user-images.githubusercontent.com/43649125/95619189-96dc3580-0a44-11eb-872c-92a031fb27a0.gif)
+
 Con esto llegamos a que el area de las barras es `A = 0.00243473 [m2]`.
 El paso siguiente es calcular el peso de cada barra, para esto se debe multiplicar el volumen por la densidad, lo cual se puede reescribir de la siguiente forma:
 
 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/43649125/95620406-82993800-0a46-11eb-8e65-4037413d6d95.gif)
+
 Desarrollando se llega a que el peso es `P = 977,534 [N]`
 Para obtener el Factor de Utilizacion de las barras utilizamos la función:
 
 ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/43649125/95621487-27684500-0a48-11eb-9198-7ac82172ab63.gif)
-Donde `\sigma_{y} = 420000000 [N/m2]` y `\phi = 0,9` Desarrollando llegamos a que los Factores de Utilizacion de las barras son:
-* FU Barra 9 = 0,011455
-* FU Barra 10 = 0,011455
-* FU Barra 13 = 0,022808
-* FU Barra 15 = 0,011455
-* FU Barra 16 = 0,011455
+
+Donde:
+
+![CodeCogsEqn (7)](https://user-images.githubusercontent.com/43649125/95624690-a7dd7480-0a4d-11eb-87a0-669675064843.gif)
+![CodeCogsEqn (8)](https://user-images.githubusercontent.com/43649125/95624741-baf04480-0a4d-11eb-88c3-77712f6b6329.gif)
+
+Los valores de las tensiones se obtuvieron de los graficos generados. Desarrollando llegamos a que los Factores de Utilizacion de las barras son:
+* FU Barra 9 `= 0,011455`
+* FU Barra 10 `= 0,011455`
+* FU Barra 13 `= 0,022808`
+* FU Barra 15 `= 0,011455`
+* FU Barra 16 `= 0,011455`
+
+Para rediseñar las barras, se consideró el hecho de que estaban en tracción, por lo tanto se descarto el calculo de la condición de la carga critica de pandeo. Despues se disminuyó el radio en razon de 5 [mm] para asi disminuir el area transversal. De la misma manera se disminuyo el espesor en razon de 1 [mm] para asi aumentar el factor de utilización. Para las condiciones de borde se consideró un radio minimo de 1 [cm] y un espesor minimo de 1[mm] para asi mantener la veracidad del reticulado con las solicitaciones de la vida real.
+En primer lugar se evaluó la condición de esbeltez. La cual tenia que cumplir lo siguiente:
+
+![CodeCogsEqn (5)](https://user-images.githubusercontent.com/43649125/95624021-95167000-0a4c-11eb-94bb-35cd68461926.gif)
+
+Donde I corresponde a la inercia y se define como:
+
+![CodeCogsEqn (4)](https://user-images.githubusercontent.com/43649125/95623681-1ae5eb80-0a4c-11eb-92e6-20b58cd577a7.gif)
+
+Desarrollando se llegó a que la esbeltez de las barras fue la siguiente:
+* Barra 9 `= 9,91044`
+* Barra 10 `= 9,91044`
+* Barra 13 `= 9,91044`
+* Barra 15 `= 9,91044`
+* Barra 16 `= 9,91044`
+
+Utilizando esta informacion, se prodeció a iterar posibles valores de R y t. Finalmente el rediseño consideró los valores minimos posibles establecidos por las condiciones de borde `R = 1 [cm]` y `t = 1[mm]`.
+Finalmente utilizando las ecuaciones mencionadas anteriormente se llegó a los siguientes valores:
+* FU Optimizado Barra 9 `= 0,467233`
+* FU Optimizado Barra 10 `= 0,467233`
+* FU Optimizado Barra 13 `= 0,930338`
+* FU Optimizado Barra 15 `= 0,467233`
+* FU Optimizado Barra 16 `= 0,467233`
+
+El peso total de la estructura optimizada, considerando solo el cambio de las 5 barras mencionadas fue de: `19.429,58 [N]`
+
 #### 2
 #### 3
 
