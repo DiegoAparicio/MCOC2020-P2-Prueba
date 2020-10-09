@@ -45,7 +45,7 @@ Peso total de la estructura: `24.197,44 [N]`
 
 ### Informe
 
-#### 1
+#### 1)
 Las barras a rediseñar serán: 9 nodos(1,7), 10 nodos(10,8), 13 nodos(1,9), 15 nodos(3,9), 16 nodos(2,10).
 En primer lugar se debe calcular el largo inicial de las barras. En este caso todas las barras poseerán el mismo largo debido a la simetria del problema en los rectangulos de la base (largo = 5m, ancho = 2m). Por lo que para encontrar el largo inicial de las barras solo hace falta aplicar el Teorema de Pitagoras. Con esto llegamos a que `L = 5,38516 [m]`.
 Una vez calculado el largo, se procede a calcular el area inicial. Para esto hay que considerar que la barra es hueca y posee un radio `R = 8 [cm]`y un espesor `t = [5 mm]`. Para calcular el area se utiliza la siguiente formula:
@@ -65,6 +65,7 @@ Para obtener el Factor de Utilizacion de las barras utilizamos la función:
 Donde:
 
 ![CodeCogsEqn (7)](https://user-images.githubusercontent.com/43649125/95624690-a7dd7480-0a4d-11eb-87a0-669675064843.gif)
+
 ![CodeCogsEqn (8)](https://user-images.githubusercontent.com/43649125/95624741-baf04480-0a4d-11eb-88c3-77712f6b6329.gif)
 
 Los valores de las tensiones se obtuvieron de los graficos generados. Desarrollando llegamos a que los Factores de Utilizacion de las barras son:
@@ -100,8 +101,9 @@ Finalmente utilizando las ecuaciones mencionadas anteriormente se llegó a los s
 
 El peso total de la estructura optimizada, considerando solo el cambio de las 5 barras mencionadas fue de: `19.429,58 [N]`
 
-#### 2
-#### 3
+#### 2)
+
+#### 3)
 
 ##### Factor de Utilización Caso 1 OPTIMIZADO
 ![FU 1 (D) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617442-d3f2f880-0a41-11eb-90ef-95f5d74457e5.jpeg)
@@ -109,5 +111,5 @@ El peso total de la estructura optimizada, considerando solo el cambio de las 5 
 ##### Factor de Utilización Caso 2 OPTIMIZADO
 ![FU 2 (D+L) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617458-d7867f80-0a41-11eb-9599-0c0ccc0bd223.png)
 
-#### 4
-#### 5
+#### 4)
+#### 5)
