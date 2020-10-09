@@ -57,6 +57,10 @@ El paso siguiente es calcular el peso de cada barra, para esto se debe multiplic
 
 ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/43649125/95620406-82993800-0a46-11eb-8e65-4037413d6d95.gif)
 
+La densidad tiene un valor de:
+
+![CodeCogsEqn (9)](https://user-images.githubusercontent.com/43649125/95626377-87fb8000-0a50-11eb-8283-8991f247ad7a.gif)
+
 Desarrollando se llega a que el peso es `P = 977,534 [N]`
 Para obtener el Factor de Utilizacion de las barras utilizamos la función:
 
