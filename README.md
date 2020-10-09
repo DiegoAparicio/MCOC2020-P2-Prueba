@@ -47,5 +47,12 @@ Programa entrega los siguientes graficos:
 #### 1
 #### 2
 #### 3
+
+##### Factor de Utilización Caso 1 OPTIMIZADO
+![FU 1 (D) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617442-d3f2f880-0a41-11eb-90ef-95f5d74457e5.jpeg)
+
+##### Factor de Utilización Caso 2 OPTIMIZADO
+![FU 2 (D+L) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617458-d7867f80-0a41-11eb-9599-0c0ccc0bd223.png)
+
 #### 4
 #### 5
