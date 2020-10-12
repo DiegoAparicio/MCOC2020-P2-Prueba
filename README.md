@@ -123,3 +123,5 @@ El peso total de la estructura optimizada, considerando solo el cambio de las 5 
 
 #### 4)
 #### 5)
+
+Se puede observar que el FU se distribuyo de mejor manera. Las barras superiores disminuyeron considerablemente su factor. EL promedio global del FU en la estructura subió, sin que en ningún caso superara el valor máximo FU =1. Debido al rediseño de las barras de la estructura, el cual se tradujo en un cambio en el área de cada sección, el peso total de la estructura disminuyo a 1 decimo de su peso original no rediseñado.
