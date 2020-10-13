@@ -150,12 +150,12 @@ Dado que la carga viva es mayo a la carga muerta, la combinación 1.2 (D) + 1.6 
 
 ##### Antes y despues para combinación de carga: 1,4*D
 ![image](https://user-images.githubusercontent.com/43451947/95917512-c2328d80-0d80-11eb-85c2-ffff11735605.png)![image](https://user-images.githubusercontent.com/43451947/95917545-d080a980-0d80-11eb-984c-f74cfa756bb0.png)
-El desplazamiento vertical maximo en los nodos antes de los cambios fue de: -0.153 mm
-El desplazamiento vertical maximo en los nodos después de los cambios fue de: -0.228 mm
+- El desplazamiento vertical maximo en los nodos antes de los cambios fue de: -0.153 mm
+- El desplazamiento vertical maximo en los nodos después de los cambios fue de: -0.228 mm
 ##### Antes y despues para combinación de carga: 1,2*D + 1,6*L
 ![image](https://user-images.githubusercontent.com/43451947/95917559-d6768a80-0d80-11eb-86be-97ffa0d51175.png)![image](https://user-images.githubusercontent.com/43451947/95917585-de362f00-0d80-11eb-9c81-538f5d615df3.png)
-El desplazamiento vertical maximo en los nodos antes de los cambios fue de: -2.739 mm
-El desplazamiento vertical maximo en los nodos después de los cambios fue de: -60.259 mm
+- El desplazamiento vertical maximo en los nodos antes de los cambios fue de: -2.739 mm
+- El desplazamiento vertical maximo en los nodos después de los cambios fue de: -60.259 mm
 #### 5)
 
 Se puede observar que el FU se distribuyo de mejor manera. Las barras superiores disminuyeron considerablemente su factor. EL promedio global del FU en la estructura subió, sin que en ningún caso superara el valor máximo FU =1. Debido al rediseño de las barras de la estructura, el cual se tradujo en un cambio en el área de cada sección, el peso total de la estructura disminuyo a 1 decimo de su peso original no rediseñado.
