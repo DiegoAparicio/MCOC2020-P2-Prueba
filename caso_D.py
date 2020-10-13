@@ -37,7 +37,7 @@ def caso_D():
     # A0=7.5*(m**2)
     # A1=15*(m**2)
     
-    #Inicializar modelo.
+    #Inicializar modelo
     ret = Reticulado()
     
     #Nodos

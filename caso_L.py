@@ -37,7 +37,7 @@ def caso_L():
     A0=2.5*(m**2)
     A1=5*(m**2)
     
-    #Inicializar modelo.
+    #Inicializar modelo
     ret = Reticulado()
     
     #Nodos

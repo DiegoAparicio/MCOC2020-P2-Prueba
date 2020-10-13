@@ -46,12 +46,6 @@ class Reticulado(object):
         return self.barras
 
 
-
-
-
-
-
-
     def agregar_restriccion(self, nodo, gdl, valor=0.0):
 
         if nodo not in self.restricciones:
@@ -99,9 +93,6 @@ class Reticulado(object):
                     q = d[j]
                     self.K[p,q] += ke[i,j]
                 self.f[p] = fe[i]
-
-
-
 
 
     def resolver_sistema(self):
@@ -196,14 +187,6 @@ class Reticulado(object):
               if not b.chequear_diseño(Fu[i], self, ϕ):
                   return False
           return True
-
-
-
-
-
-
-
-
 
 
     def __str__(self):
