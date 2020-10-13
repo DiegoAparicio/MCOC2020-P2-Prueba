@@ -113,13 +113,40 @@ El peso total de la estructura optimizada, considerando solo el cambio de las 5 
 
 #### 2)
 
+El objetivo de la función rediseñar era aumentar el factor de utilización de las barras mediante un cambio tanto en el radio como en el espesor de las barras.
+Para esto se creó un arange `lista_R`, el cual poseía todos los valores posibles para el radio. Partiendo por la condición de borde de 1 centímetro y con un incremento de 5 milímetros hasta llegar a los 8 centímetros. Se hizo lo mismo con el espesor creando un arange `lista_t` con todos los valores posibles para el espesor. Partiendo por 1 milimetro y con un incremento de 1 milímetro por iteración hasta llegar a 5 milímetros.
+Luego se creo una lista llamada `todas_las_combinaciones` la cual con ayuda de `itertools.product` creaba una lista con todas las combinaciones posibles. Una vez realizado esto se evaluó la condición de esbeltez para todas las combinaciones posibles mediante un ciclo for, donde se redefinió el área, inercia y largo de cada barra. Si la ecuación de esbeltez cumplía con que era menor o igual a 300, las combinaciones se guardaban en una lista llamada `lista_pasa_esbeltez`.
+Una vez comprobado el criterio de esbeltez, se procedió a evaluar la condición de carga critica de pandeo. Para esto se redefinió el área, inercia y largo con los valores de la lista `lista_pasa_esbeltez`. Si FU era menor que 0 (lo que implicaría que estaba en pandeo) se procedería a calcular el Fn mínimo. Si FU era mayor o igual a 0 se evaluarían las barras, con sus tensiones de tracción correspondientes y se calcularía el Factor de Utilización con la ecuación `eq2`. Finalmente se evaluaría si la ecuación del factor de utilización era efectivamente menor que 1 (como se pedía en el enunciado). De cumplir con lo anterior, los valores de combinaciones entre el radio y el espesor fueron guardados en la lista `lista_pasa_esbeltez_y_fu`.
+Con esta lista creada solo basto ordenar los valores existentes (que contenían el radio, espesor y factor de utilización) y buscar el máximo valor del factor de utilización existente, de manera de asegurar que de todas las posibles combinaciones se estaba retornando el máximo valor posible. Una vez hecho esto se reemplazo los valores de R y t correspondientes y se rediseño la barra.
+Gracias a esta función, este proceso se repitió en cada una de las 30 barras. El peso de la estructura muerta, al igual que el peso de la estructura muerta más la carga viva fue de aproximadamente 1 decimo del peso original (del orden de los `2400 N`).
+
+
 #### 3)
+Los criterios de rediseño utilizados son los que se comentaron en 2). Se buscó los valores mas bajos posibles de radio y espesor en cada barra para optimizar su peso y gracias a esto aumentar su factor de utilización. Lo anterior sin descuidar las condiciones de borde impuestas (radio mínimo = 1 cm y espesor mínimo = 1 mm). Los criterios mas importantes fueron definir si la barra se encontraba bajo condiciones de pandeo, y si el FU era mayor a 1 o no. 
+Dado que la carga viva es mayo a la carga muerta, la combinación 1.2 (D) + 1.6 (L) produce tensiones mayores a las de la combinación que solo considera la carga muerta 1.4 (D). Por lo tanto se utilizó siempre la combinación de cargas mayor.
 
-##### Factor de Utilización Caso 1 OPTIMIZADO
-![FU 1 (D) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617442-d3f2f880-0a41-11eb-90ef-95f5d74457e5.jpeg)
+##### Tensiones Caso 1.4*D OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887061-c9907180-0d55-11eb-8114-2ebf28633c47.png)
 
-##### Factor de Utilización Caso 2 OPTIMIZADO
-![FU 2 (D+L) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617458-d7867f80-0a41-11eb-9599-0c0ccc0bd223.png)
+##### Factor de utilizacion Caso 1.4*D OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887192-e9c03080-0d55-11eb-977d-d9fe234bf79a.png)
+
+##### Tensiones Caso 1.2*D + 1.6*L OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887288-0bb9b300-0d56-11eb-8ea3-583819008e8c.png)
+
+##### Factor de Utilización Caso 1.2*D + 1.6*L OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887347-1bd19280-0d56-11eb-9ce5-7ed0a6070a58.png)
+
+##### Tensiones Caso eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L 
+![image](https://user-images.githubusercontent.com/43451947/95887520-52a7a880-0d56-11eb-8ed1-24693a9603af.png)
+
+##### Factor de utilizacion eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L
+![image](https://user-images.githubusercontent.com/43451947/95887609-710da400-0d56-11eb-89ef-56b76bc896f9.png)
+
 
 #### 4)
 #### 5)
+
+Se puede observar que el FU se distribuyo de mejor manera. Las barras superiores disminuyeron considerablemente su factor. EL promedio global del FU en la estructura subió, sin que en ningún caso superara el valor máximo FU =1. Debido al rediseño de las barras de la estructura, el cual se tradujo en un cambio en el área de cada sección, el peso total de la estructura disminuyo a 1 decimo de su peso original no rediseñado.
+
+Para mejorar aun más el costo de la estructura, se podría remover las barras cuyo FU es igual a cero (barras 4 y 8) que no estarían aportando a la estructura. Adicional a lo anterior, se podría reemplazar aquellas barras que estén en tracción por cables, disminuyendo aun mas el peso total de la estructura.
