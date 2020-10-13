@@ -1,7 +1,12 @@
 import numpy as np
 
+from sympy import *
+from sympy.solvers.solveset import linsolve
+import itertools
+from operator import itemgetter
 g = 9.81 #kg*m/s^2
-
+m=1.0
+mm=m/1000
 
 class Barra(object):
 
@@ -111,9 +116,11 @@ class Barra(object):
         """Para la fuerza Fu (proveniente de una combinacion de cargas)
         calcular y devolver el factor de utilización
         """
-        FU = 0. 
-
-        return FU
+        A=self.calcular_area()
+        Fn=A*self.σy
+        
+        factor_de_utilizacion = abs(Fu) / (ϕ*Fn)
+        return factor_de_utilizacion
 
 
     def rediseñar(self, Fu, ret, ϕ=0.9):
@@ -122,8 +129,44 @@ class Barra(object):
         se cumplan las disposiciones de diseño lo más cerca posible
         a FU = 1.0.
         """
-        self.R = 0.9*self.R   #cambiar y poner logica de diseño
-        self.t = 0.9*self.t   #cambiar y poner logica de diseño
-        return None
+        
+        
+        lista_R=np.arange(0.01,0.08,0.005)
+        lista_t=np.arange(0.001,0.006,0.001)
+        todas_las_combinaciones = list(itertools.product(lista_R, lista_t))
+        
+        lista_pasa_esbeltez=[]
+        for i in todas_las_combinaciones: # Este for evalua la condicion de esbeltez
+            Area_combinacion_i=np.pi*(i[0]**2) - np.pi*((i[0]-i[1])**2)
+            I_combinacion_i=(np.pi/4)*(i[0]**4 - (i[0] - i[1])**4)
+            Largo_combinacion_i=self.calcular_largo(ret)
+            eq1=np.sqrt(Largo_combinacion_i/(np.sqrt((I_combinacion_i)/(Area_combinacion_i))))
+            if eq1 <= 300.0:
+                lista_pasa_esbeltez.append(i)
+        
+        
+        lista_pasa_esbeltez_y_fu=[]
+        for j in lista_pasa_esbeltez: # Este for itera sobre la lista "lista_pasa_esbeltez", para el calculo del factor de 
+            Area_combinacion_j=np.pi*(j[0]**2) - np.pi*((j[0]-j[1])**2)
+            I_combinacion_j=(np.pi/4)*(j[0]**4 - (j[0] - j[1])**4)
+            Largo_combinacion_j=self.calcular_largo(ret)
+            if Fu < 0.0: # En este caso se evaluan las barras a compresion para verificar con la condicion de carga critica de pandeo
+                caso_a=Area_combinacion_j*self.σy
+                caso_b=(((np.pi)**2)*self.E*I_combinacion_j)/(Largo_combinacion_j**2)
+                Fn=min(caso_a,caso_b)
+            if Fu >= 0: # Finalmente se evaluan las barras, con tensiones de traccion y se procede con el calculo del factor de utilizacion.
+                Fn=Area_combinacion_j*self.σy
+            eq2 = abs(Fu)/(ϕ*Fn)
+            if eq2 < 1.0: # se verifica que el Factor de utilizacion sea menor a 1, ya que no puede ser mayor.
+                lista_aux=[j[0],j[1],eq2]
+                lista_pasa_esbeltez_y_fu.append(lista_aux)
+                
+        
+        maximos_R_t=sorted(lista_pasa_esbeltez_y_fu, key=itemgetter(2))[-1] #se obtiene el radio y espesor respectivo para el maximo factor de utilizacion
+        #print (maximos_R_t)
+        self.R=maximos_R_t[0]
+        self.t=maximos_R_t[1]
+       
+        return None       
 
 
