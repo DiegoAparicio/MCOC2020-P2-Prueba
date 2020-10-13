@@ -16,6 +16,8 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 
 ## Entrega 2
 
+*Nota: el código entregado imprime los gráficos pedidos y el peso de la estructura, ademas imprime los gráficos utilizados en este informe junto con sus deformadas y su desplazamiento máximo.*
+
 ### Gráfico 2D
 ![image](https://user-images.githubusercontent.com/43451947/94840041-36b71500-03ee-11eb-9b09-b3e239d59dc2.png)
 
