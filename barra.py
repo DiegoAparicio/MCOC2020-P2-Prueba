@@ -49,14 +49,6 @@ class Barra(object):
 
 
 
-
-
-
-
-
-
-
-
     def obtener_rigidez(self, ret):
         A = self.calcular_area()
         L = self.calcular_largo(ret)
@@ -94,8 +86,6 @@ class Barra(object):
         Tθ = np.array([ -cosθ, -sinθ, cosθ, sinθ ]).reshape((4,1))
 
         return self.E * A / L * (Tθ.T @ ue)
-
-
 
 
 
