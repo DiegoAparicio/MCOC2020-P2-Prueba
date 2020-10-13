@@ -16,7 +16,6 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 
 ## Entrega 2
 
-*Nota: el código entregado imprime los gráficos pedidos y el peso de la estructura, ademas imprime los gráficos utilizados en este informe junto con sus deformadas y su desplazamiento máximo.*
 
 ### Gráfico 2D
 ![image](https://user-images.githubusercontent.com/43451947/94840041-36b71500-03ee-11eb-9b09-b3e239d59dc2.png)
@@ -26,6 +25,7 @@ Dado que fue la primera entrega, el `__string__(self)` fue subido en el archivo 
 ![image](https://user-images.githubusercontent.com/43451947/94840233-7d0c7400-03ee-11eb-9e66-1c545049ea23.png)
 
 ## Entrega 4
+*Nota: el código entregado imprime los gráficos pedidos y el peso de la estructura, ademas imprime los gráficos utilizados en este informe junto con sus deformadas y su desplazamiento máximo.*
 
 Programa entrega los siguientes graficos:
 ### Reticulado
@@ -128,22 +128,22 @@ Los criterios de rediseño utilizados son los que se comentaron en 2). Se buscó
 Dado que la carga viva es mayo a la carga muerta, la combinación 1.2 (D) + 1.6 (L) produce tensiones mayores a las de la combinación que solo considera la carga muerta 1.4 (D). Por lo tanto se utilizó siempre la combinación de cargas mayor.
 
 ##### Tensiones Caso 1.4*D OPTIMIZADO
-![image](https://user-images.githubusercontent.com/43451947/95887061-c9907180-0d55-11eb-8114-2ebf28633c47.png)
+![image](https://user-images.githubusercontent.com/43451947/95917049-040f0400-0d80-11eb-83ad-d263c988504c.png)
 
 ##### Factor de utilizacion Caso 1.4*D OPTIMIZADO
-![image](https://user-images.githubusercontent.com/43451947/95887192-e9c03080-0d55-11eb-977d-d9fe234bf79a.png)
+![image](https://user-images.githubusercontent.com/43451947/95917062-0a04e500-0d80-11eb-8bd0-f5a6fc9bfecb.png)
 
 ##### Tensiones Caso 1.2*D + 1.6*L OPTIMIZADO
-![image](https://user-images.githubusercontent.com/43451947/95887288-0bb9b300-0d56-11eb-8ea3-583819008e8c.png)
+![image](https://user-images.githubusercontent.com/43451947/95917077-0f622f80-0d80-11eb-9b52-0e0b8a3f13e4.png)
 
 ##### Factor de Utilización Caso 1.2*D + 1.6*L OPTIMIZADO
-![image](https://user-images.githubusercontent.com/43451947/95887347-1bd19280-0d56-11eb-9ce5-7ed0a6070a58.png)
+![image](https://user-images.githubusercontent.com/43451947/95917094-14bf7a00-0d80-11eb-9d52-6ce3ec8dae00.png)
 
 ##### Tensiones Caso eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L 
-![image](https://user-images.githubusercontent.com/43451947/95887520-52a7a880-0d56-11eb-8ed1-24693a9603af.png)
+![image](https://user-images.githubusercontent.com/43451947/95917119-1e48e200-0d80-11eb-8fb8-f2bb5a958729.png)
 
 ##### Factor de utilizacion eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L
-![image](https://user-images.githubusercontent.com/43451947/95887609-710da400-0d56-11eb-89ef-56b76bc896f9.png)
+![image](https://user-images.githubusercontent.com/43451947/95917134-23a62c80-0d80-11eb-8653-a4adf06c2922.png)
 
 
 #### 4)
