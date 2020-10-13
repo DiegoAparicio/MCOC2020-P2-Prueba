@@ -122,12 +122,27 @@ Gracias a esta función, este proceso se repitió en cada una de las 30 barras. 
 
 
 #### 3)
+Los criterios de rediseño utilizados son los que se comentaron en 2). Se buscó los valores mas bajos posibles de radio y espesor en cada barra para optimizar su peso y gracias a esto aumentar su factor de utilización. Lo anterior sin descuidar las condiciones de borde impuestas (radio mínimo = 1 cm y espesor mínimo = 1 mm). Los criterios mas importantes fueron definir si la barra se encontraba bajo condiciones de pandeo, y si el FU era mayor a 1 o no. 
+Dado que la carga viva es mayo a la carga muerta, la combinación 1.2 (D) + 1.6 (L) produce tensiones mayores a las de la combinación que solo considera la carga muerta 1.4 (D). Por lo tanto se utilizó siempre la combinación de cargas mayor.
 
-##### Factor de Utilización Caso 1 OPTIMIZADO
-![FU 1 (D) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617442-d3f2f880-0a41-11eb-90ef-95f5d74457e5.jpeg)
+##### Tensiones Caso 1.4*D OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887061-c9907180-0d55-11eb-8114-2ebf28633c47.png)
 
-##### Factor de Utilización Caso 2 OPTIMIZADO
-![FU 2 (D+L) OPTIMIZADO](https://user-images.githubusercontent.com/43649125/95617458-d7867f80-0a41-11eb-9599-0c0ccc0bd223.png)
+##### Factor de utilizacion Caso 1.4*D OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887192-e9c03080-0d55-11eb-977d-d9fe234bf79a.png)
+
+##### Tensiones Caso 1.2*D + 1.6*L OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887288-0bb9b300-0d56-11eb-8ea3-583819008e8c.png)
+
+##### Factor de Utilización Caso 1.2*D + 1.6*L OPTIMIZADO
+![image](https://user-images.githubusercontent.com/43451947/95887347-1bd19280-0d56-11eb-9ce5-7ed0a6070a58.png)
+
+##### Tensiones Caso eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L 
+![image](https://user-images.githubusercontent.com/43451947/95887520-52a7a880-0d56-11eb-8ed1-24693a9603af.png)
+
+##### Factor de utilizacion eleccion de 5 barras utilizando la combinacion: 1.2*D + 1.6*L
+![image](https://user-images.githubusercontent.com/43451947/95887609-710da400-0d56-11eb-89ef-56b76bc896f9.png)
+
 
 #### 4)
 #### 5)
